@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -82,6 +84,12 @@ class DetailKulinerFragment : Fragment() {
         val refreshLayout=view.findViewById<SwipeRefreshLayout>(R.id.refreshLayout)
         val txtError = view.findViewById<TextView>(R.id.txtError)
         val progressLoad = view.findViewById<ProgressBar>(R.id.progressLoad)
+        val btnReservasi= view.findViewById<Button>(R.id.btnReserve)
+
+        btnReservasi.setOnClickListener {
+            val action=DetailKulinerFragmentDirections.actionReservassiFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
 
         refreshLayout.setOnRefreshListener {
             recView.visibility=View.GONE

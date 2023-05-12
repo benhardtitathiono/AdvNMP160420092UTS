@@ -16,6 +16,9 @@
         <action
             android:id="@+id/actionDetailMenu"
             app:destination="@id/detailMenuFragment" />
+        <action
+            android:id="@+id/actionReservassiFragment"
+            app:destination="@id/ReservasiFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemHome"
@@ -74,4 +77,9 @@
         <argument android:name="resto"
             app:argType="string" />
     </fragment>
+    <dialog
+        android:id="@+id/ReservasiFragment"
+        android:name="com.ubaya160420092.a160420092_ubayakuliner.ReservasiFragment"
+        android:label="fragment_reservasi"
+        tools:layout="@layout/fragment_reservasi" />
 </navigation>
